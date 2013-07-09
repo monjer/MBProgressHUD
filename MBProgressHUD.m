@@ -104,6 +104,29 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 
 #pragma mark - Class methods
 
++ (id)showSuccessedHUDInView:(UIView*)view animation:(BOOL) animated
+{
+    MBProgressHUD *HUD = [[self alloc] initWithView:view];
+    
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    
+    // Set custom view mode
+    HUD.mode = MBProgressHUDModeCustomView;
+    
+    [view addSubview:HUD];
+    
+    [HUD show:animated];
+    
+    return HUD ;
+}
+
++ (id)showSuccessedHUDInView:(UIView*)view withInfo:(NSString*)info animation:(BOOL) animated
+{
+    MBProgressHUD *hud = [self showSuccessedHUDInView:view animation:YES];
+    hud.labelText = info ;
+    return hud ;
+}
+
 + (MB_INSTANCETYPE)showHUDAddedTo:(UIView *)view animated:(BOOL)animated {
 	MBProgressHUD *hud = [[self alloc] initWithView:view];
 	[view addSubview:hud];

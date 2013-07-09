@@ -111,6 +111,16 @@ typedef void (^MBProgressHUDCompletionBlock)();
 @interface MBProgressHUD : UIView
 
 /**
+ * Creates a new HUD , add it to the provied view and shows it , indicating an operation completed successfully.
+ **/
++ (id)showSuccessedHUDInView:(UIView*)view animation:(BOOL) animated;
+
+/**
+ * Creates a new HUD with an info string , add it to the provied view and shows it , indicating an operation completed successfully.
+ **/
++ (id)showSuccessedHUDInView:(UIView*)view withInfo:(NSString*)info animation:(BOOL) animated;
+
+/**
  * Creates a new HUD, adds it to provided view and shows it. The counterpart to this method is hideHUDForView:animated:.
  * 
  * @param view The view that the HUD will be added to
