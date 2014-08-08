@@ -122,7 +122,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 
 + (id)showSuccessedHUDInView:(UIView*)view withInfo:(NSString*)info animation:(BOOL) animated
 {
-    MBProgressHUD *hud = [self showSuccessedHUDInView:view animation:YES];
+    MBProgressHUD *hud = [self showSuccessedHUDInView:view animation:animated];
     hud.labelText = info ;
     return hud ;
 }
